@@ -25,17 +25,17 @@ $aModule = [
     ],
     'description' => [
         'en' => 'Internal OXID eShop module system information and troubleshooting tools (V6).',
-        'de' => 'Internes OXID eShop Modulsystem Informations- und Troubleshooting Werkzeuge (V6).'
-     ],
+        'de' => 'Internes OXID eShop Modulsystem Informations- und Troubleshooting Werkzeuge (V6).',
+    ],
     'thumbnail'   => 'module_internals.png',
-    'version'      => '3.0',
+    'version'     => '3.0',
     'author'      => 'OXID Community',
     'url'         => 'https://github.com/OXIDprojects/oxid-module-internals',
     'email'       => '',
     'extend'      => [
         Module::class => InternalModule::class,
-        \OxidEsales\Eshop\Application\Controller\Admin\NavigationController::class
-            => NavigationController::class
+        // don't do this - DON'T
+        // \OxidEsales\Eshop\Application\Controller\Admin\NavigationController::class => NavigationController::class,
     ],
     'controllers' => [
         'module_internals_metadata' => Metadata::class,
@@ -44,24 +44,24 @@ $aModule = [
         'checkconsistency'          => CheckConsistency::class,
     ],
     'templates'   => [
-        'metadata.tpl'              => 'oxcom/moduleinternals/views/admin/tpl/metadata.tpl',
-        'state.tpl'                 => 'oxcom/moduleinternals/views/admin/tpl/state.tpl',
-        'items.tpl'                 => 'oxcom/moduleinternals/views/admin/tpl/items.tpl',
-        'utils.tpl'                 => 'oxcom/moduleinternals/views/admin/tpl/utils.tpl',
-        'checkconsistency.tpl'      => 'oxcom/moduleinternals/views/flow/tpl/checkconsistency.tpl',
+        'metadata.tpl'         => 'oxcom/moduleinternals/views/admin/tpl/metadata.tpl',
+        'state.tpl'            => 'oxcom/moduleinternals/views/admin/tpl/state.tpl',
+        'items.tpl'            => 'oxcom/moduleinternals/views/admin/tpl/items.tpl',
+        'utils.tpl'            => 'oxcom/moduleinternals/views/admin/tpl/utils.tpl',
+        'checkconsistency.tpl' => 'oxcom/moduleinternals/views/flow/tpl/checkconsistency.tpl',
     ],
     'settings'    => [
         [
             'group' => 'AC_CONFIG',
             'name'  => 'blACActiveCompleteCheck',
             'type'  => 'bool',
-            'value' => 'false'
+            'value' => 'false',
         ],
         [
             'group' => 'AC_CONFIG',
             'name'  => 'sACActiveCompleteKey',
             'type'  => 'str',
-            'value' => ''
+            'value' => '',
         ],
-    ]
+    ],
 ];
