@@ -248,7 +248,7 @@ class InternalModule extends InternalModule_parent
         $request = Registry::getRequest();
         $controller = $request->getRequestParameter('cl');
 
-        if ($controller == 'module_list' || $controller == 'checkconsistency') {
+        if ($controller == 'checkconsistency') {
             $fixed = $this->getModuleStateFixer()->fix($this);
             if ($fixed) {
                 $title .= ' <strong style="color: #00e200">State fixed</strong>';
